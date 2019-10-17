@@ -1,0 +1,56 @@
+{
+  "name": "Shop",
+  "plural": "shops",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "latitude": {
+      "type": "number",
+      "required": true,
+      "dataType": "float"
+    },
+    "longitude": {
+      "type": "number",
+      "required": true,
+      "dataType": "float"
+    },
+    "logoUri": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "sales": {
+      "type": "hasMany",
+      "model": "Sale",
+      "foreignKey": "idShop"
+    },
+    "owner": {
+      "type": "belongsTo",
+      "model": "Person",
+      "foreignKey": "idOwner"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

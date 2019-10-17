@@ -1,0 +1,19 @@
+<div class="content">
+  <mat-card class="center-in-parent">
+    <h2 style="padding-bottom: 10px;">INICIA SESIÓN</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input type="email" matInput placeholder="Correo electrónico" formControlName="email">
+        <mat-error>Correo inválido</mat-error>
+      </mat-form-field>
+      <mat-form-field style="padding-bottom: 20px;">
+        <input [type]="hiddenPass ? 'password' : 'text'" matInput placeholder="Contraseña" formControlName="password">
+        <button type="button" mat-icon-button matSuffix (click)="hiddenPass = !hiddenPass">
+          <mat-icon>{{hiddenPass ? 'visibility_off_outlined' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <div class="error-msg" style="padding-bottom: 10px;" *ngIf="errorMessage" style="color:red;">{{errorMessage}}</div>
+      <button color="primary" mat-raised-button type="submit">INICIA SESIÓN</button>
+    </form>
+  </mat-card>
+</div>

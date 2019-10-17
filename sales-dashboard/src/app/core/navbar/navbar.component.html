@@ -1,0 +1,23 @@
+<div class="start-menu">
+  <header>
+    <img class="logo-icon" src="assets/images/angular.svg" height="40px" alt="logo-icon">
+    <span class="logo-text">AR SALES</span>
+  </header>
+  <!-- menu start -->
+  <mat-nav-list>
+    <mat-list-item *ngFor="let link of links" [routerLink]="link.path" routerLinkActive="active-link">
+        <mat-icon>{{ link.icon }}</mat-icon>
+        <span>{{ link.name }}</span>
+    </mat-list-item>
+  </mat-nav-list>
+  <!-- menu end -->
+</div>
+
+<footer>
+  <mat-nav-list>
+      <mat-list-item (click)="onLogout()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Cerrar sesión</span>
+      </mat-list-item>
+  </mat-nav-list>
+</footer>

@@ -1,0 +1,41 @@
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #292929;
+    
+    .center-in-parent {
+        position: absolute;
+        top : 50%;
+        left : 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+
+    mat-card {
+        width: 350px;
+        padding: 30px;
+
+        mat-form-field { width: 100%; }
+
+        form { mat-icon { font-size: 20px; } }
+
+        button[type="submit"] { width: 50% !important; }
+
+        span {
+            font-size: 14px;
+            padding: 30px 0 14px 0;
+            color: #26a9e1;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        div.error-msg {
+            padding-bottom: 14px;
+            font-size: 14px;
+        }
+    }
+}

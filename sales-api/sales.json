@@ -1,0 +1,23 @@
+[
+    {
+        "item": "Pantalones cortos",
+        "price": 20,
+        "shop": "Springfield",
+        "latitude": 44,
+        "longitude": 43
+    },
+    {
+        "item": "Pantalones largos",
+        "price": 5,
+        "shop": "Mango",
+        "latitude": 45,
+        "longitude": 44
+    },
+    {
+        "item": "Camiseta corta Rick y Morty",
+        "price": 15,
+        "shop": "Bershka",
+        "latitude": 44,
+        "longitude": 44
+    }
+]

@@ -1,0 +1,31 @@
+<mat-toolbar class="sticky">
+  <span>Tiendas / {{shop?.name}}</span>
+</mat-toolbar>
+
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!-- Name field -->
+    <mat-form-field>
+        <input matInput type="text" placeholder="Nombre" formControlName="name" required>
+    </mat-form-field>
+
+    <!-- Latitude field -->
+    <mat-form-field>
+        <input matInput type="number" placeholder="Latitud" formControlName="latitude" required>
+        <span matSuffix>grados</span>
+        <mat-hint>Ejemplo: 36.6470952</mat-hint>
+        <mat-error>Latitud inválida</mat-error>
+    </mat-form-field>
+
+    <!-- Longitude field -->
+    <mat-form-field>
+        <input matInput type="number" placeholder="Longitud" formControlName="longitude" required>
+        <span matSuffix>grados</span>
+        <mat-hint>Ejemplo: -4.6777544</mat-hint>
+        <mat-error>Longitud inválida</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Guardar</button>
+    <button mat-raised-button color="warn" class="delete" type="button" (click)="onDelete()">Borrar</button>
+  </form>
+</div>

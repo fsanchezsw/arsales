@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "sources": ["loopback/common/models", "loopback/server/models", "../common/models", "./models"],
+    "mixins": ["loopback/common/mixins", "loopback/server/mixins", "../common/mixins", "./mixins"]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "mysql",
+    "public": false,
+    "relations": {
+        "user": {
+          "type": "belongsTo",
+          "model": "Person",
+          "foreignKey": "userId"
+        }
+    }
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mysql",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "mysql",
+    "public": false
+  },
+  "Sale": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Shop": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Person": {
+    "dataSource": "mysql",
+    "public": true
+  }
+}

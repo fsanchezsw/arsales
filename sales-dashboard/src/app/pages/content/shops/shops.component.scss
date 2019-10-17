@@ -1,0 +1,38 @@
+mat-toolbar {
+    background-color: #292929;
+    background-size: cover;
+    height: 64px;
+    font-weight: 400;
+
+    span {
+        padding-left: 10px;
+        color: white;
+    }
+}
+
+mat-toolbar.sticky {
+    position: sticky;
+    position: -webkit-sticky;
+    /* For macOS/iOS Safari */
+    top: 0;
+    /* Sets the sticky toolbar to be on top */
+    z-index: 1000;
+    /* Ensure that your app's content doesn't overlap the toolbar */
+}
+
+div.container {
+    padding: 24px;
+
+    table {
+        width: 100%;
+    
+        tr[mat-row] { cursor: pointer; }
+    }
+}
+
+button[mat-fab] {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 24px;
+}

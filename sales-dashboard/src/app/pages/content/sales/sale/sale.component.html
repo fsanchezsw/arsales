@@ -1,0 +1,46 @@
+<mat-toolbar class="sticky">
+  <span>Ofertas / {{sale?.name}}</span>
+</mat-toolbar>
+
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!-- Name field -->
+    <mat-form-field>
+        <input matInput type="text" placeholder="Nombre" formControlName="name" required>
+    </mat-form-field>
+
+    <!-- Price field -->
+    <mat-form-field>
+      <input matInput type="number" placeholder="Precio" formControlName="price" required>
+      <span matSuffix>€</span>
+      <mat-hint>Introduce sólo la cifra</mat-hint>
+    </mat-form-field>
+
+    <!-- Discount field -->
+    <mat-form-field>
+        <input matInput type="number" placeholder="Descuento" formControlName="discount" required>
+        <span matSuffix>%</span>
+        <mat-hint>Introduce sólo la cifra del porcentaje</mat-hint>
+    </mat-form-field>
+
+    <!-- Url field -->
+    <mat-form-field>
+      <input matInput type="url" placeholder="Enlace" formControlName="url" required>
+      <mat-hint>Ejemplo: https://myspringfield.com</mat-hint>
+      <mat-error>Formato de url incorrecto</mat-error>
+    </mat-form-field>
+
+    <!-- Shop field -->
+    <mat-form-field>
+      <mat-label>Selecciona tienda *</mat-label>
+      <mat-select formControlName="idShop">
+        <mat-option *ngFor="let shop of shops" [value]="shop.id">
+          {{shop.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Guardar</button>
+    <button mat-raised-button color="warn" class="delete" type="button" (click)="onDelete()">Borrar</button>
+  </form>
+</div>
