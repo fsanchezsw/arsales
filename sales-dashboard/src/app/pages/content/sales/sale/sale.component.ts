@@ -35,6 +35,7 @@ export class SaleComponent implements OnInit {
       price: [, Validators.required],
       discount: [, Validators.required],
       url: [, Validators.required],
+      imageUrl: [, Validators.required],
       idShop: [, Validators.required]
     });
   }
@@ -58,6 +59,7 @@ export class SaleComponent implements OnInit {
       price: sale.price,
       discount: sale.discount,
       url: sale.url,
+      imageUrl: sale.imageUrl,
       idShop: sale.idShop
     });
   }

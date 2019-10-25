@@ -4,6 +4,5 @@ data class Shop(
     val id: Int,
     val name: String,
     val latitude: Double,
-    val longitude: Double,
-    val logoUri: String?
+    val longitude: Double
 )

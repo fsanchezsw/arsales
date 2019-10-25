@@ -9,5 +9,4 @@ object ShopSchema : BaseColumns {
     const val NAME: String = "name"
     const val LATITUDE: String = "latitude"
     const val LONGITUDE: String = "longitude"
-    const val LOGO_URI: String = "logoUri"
 }

@@ -6,7 +6,16 @@
   "options": {
     "validateUpsert": true
   },
-  "properties": {},
+  "properties": {
+    "created": {
+      "type": "date",
+      "default": "$now"
+    },
+    "modified": {
+      "type": "date",
+      "default": "$now"
+    }
+  },
   "validations": [],
   "relations": {
     "shops": {

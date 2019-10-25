@@ -10,6 +10,6 @@ object SaleSchema : BaseColumns {
     const val PRICE: String = "price"
     const val DISCOUNT: String = "discount"
     const val URL: String = "url"
-    const val IMAGE_URI: String = "imageUri"
+    const val IMAGE_URL: String = "imageUrl"
     const val ID_SHOP: String = "idShop"
 }

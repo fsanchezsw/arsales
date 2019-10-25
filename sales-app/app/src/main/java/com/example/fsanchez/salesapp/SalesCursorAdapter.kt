@@ -31,13 +31,13 @@ class SalesCursorAdapter(context: Context, cursor: Cursor): CursorAdapter(contex
         val price = cursor?.getString(cursor?.getColumnIndex(SaleSchema.PRICE))
         val discount = cursor?.getString(cursor?.getColumnIndex(SaleSchema.DISCOUNT))
         val oldPrice = round(Double.parseDouble(price) + Double.parseDouble(price) * Integer.parseInt(discount) / 100).toInt()
-        val image = cursor?.getString(cursor?.getColumnIndex(SaleSchema.IMAGE_URI))
+        val image = cursor?.getString(cursor?.getColumnIndex(SaleSchema.IMAGE_URL))
 
         tvName?.text = name
         tvPrice?.text = "$price€"
         tvDiscount?.text = "-$discount%"
         tvOldPrice?.text = "$oldPrice€"
-//        ivImage?.setImageURI(Uri.parse("file://src/main/assets/$image"))
+        ivImage?.setImageURI(Uri.parse("https://myspringfield.com/dw/image/v2/AAYL_PRD/on/demandware.static/-/Sites-gc-spf-master-catalog/default/dw6cc89bd7/images/hi-res/P_283651311FM.jpg?sw=2000&sh=2000&sm=fit"))
     }
 
 }

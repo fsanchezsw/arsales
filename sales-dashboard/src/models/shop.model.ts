@@ -6,7 +6,6 @@ export interface Shop {
     name?: string;
     latitude?: number;
     longitude?: number;
-    logoUri?: string;
 
     // belongsTo relations
     idOwner?: number;

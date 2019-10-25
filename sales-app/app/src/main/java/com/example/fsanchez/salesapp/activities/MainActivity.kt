@@ -49,23 +49,23 @@ class MainActivity : AppCompatActivity() {
 
 //        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
-//        GlobalScope.launch { requestAPI() }
+        GlobalScope.launch { requestAPI() }
 
-        GlobalScope.launch {
-            val dbHandler = DBHandler(this@MainActivity)
-            val cursor = dbHandler.findShops()
-
-            shops = (1 .. cursor.count).map {
-                cursor.moveToNext()
-                Shop(
-                    cursor.getInt(0),
-                    cursor.getString(1),
-                    cursor.getDouble(2),
-                    cursor.getDouble(3),
-                    cursor.getString(4)
-                )
-            }
-        }
+//        GlobalScope.launch {
+//            val dbHandler = DBHandler(this@MainActivity)
+//            val cursor = dbHandler.findShops()
+//
+//            shops = (1 .. cursor.count).map {
+//                cursor.moveToNext()
+//                Shop(
+//                    cursor.getInt(0),
+//                    cursor.getString(1),
+//                    cursor.getDouble(2),
+//                    cursor.getDouble(3),
+//                    cursor.getString(4)
+//                )
+//            }
+//        }
 
         checkCameraPermission()
         checkLocationPermission()
@@ -73,18 +73,18 @@ class MainActivity : AppCompatActivity() {
 
     fun requestAPI() {
         val shopService = Retrofit.Builder()
-            .baseUrl("http://192.168.1.103:3000/api/")
+            .baseUrl("http://192.168.1.38:3000/api/")
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
             .create(ShopService::class.java)
 
         shopService.all().enqueue(object : Callback<List<Shop>> {
             override fun onResponse(call: Call<List<Shop>>, response: Response<List<Shop>>) {
-                response.body()?.forEach { println("HOLA_: ${it.name}") }
+                shops = response.body()
             }
 
             override fun onFailure(call: Call<List<Shop>>, t: Throwable) {
-                println("MI POLLA GORDA" + t.message)
+                Log.e("LOG", "ERROR")
             }
         })
     }
@@ -249,7 +249,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun compareLocation(location: Location) {
-        val margin = 0.0004
+        val margin = 0.0002
         for(i in shops.indices) {
             if(Math.abs(shops[i].latitude - location.latitude) < margin &&
                 Math.abs(shops[i].longitude - location.longitude) < margin) {

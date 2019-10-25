@@ -6,7 +6,7 @@ export interface Sale {
     price?: number;
     url?: string;
     discount?: number;
-    imageUri?: string;
+    imageUrl?: string;
 
     // belongsTo relations
     idShop?: number;

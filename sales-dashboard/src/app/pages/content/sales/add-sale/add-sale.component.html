@@ -25,8 +25,15 @@
 
     <!-- Url field -->
     <mat-form-field>
-      <input matInput type="url" placeholder="Enlace" formControlName="url" required>
+      <input matInput type="url" placeholder="Enlace a la oferta" formControlName="url" required>
       <mat-hint>Ejemplo: https://myspringfield.com</mat-hint>
+      <mat-error>Formato de url incorrecto</mat-error>
+    </mat-form-field>
+
+    <!-- ImageUrl field -->
+    <mat-form-field>
+      <input matInput type="url" placeholder="Enlace a la imagen de la oferta (se mostrará en la app)" formControlName="imageUrl" required>
+      <mat-hint>La imagen se adaptará mejor si tiene más píxeles de alto que de ancho</mat-hint>
       <mat-error>Formato de url incorrecto</mat-error>
     </mat-form-field>
 

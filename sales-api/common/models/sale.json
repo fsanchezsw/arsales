@@ -23,8 +23,16 @@
     "discount": {
       "type": "number"
     },
-    "imageUri": {
+    "imageUrl": {
       "type": "string"
+    },
+    "created": {
+      "type": "date",
+      "default": "$now"
+    },
+    "modified": {
+      "type": "date",
+      "default": "$now"
     }
   },
   "validations": [],

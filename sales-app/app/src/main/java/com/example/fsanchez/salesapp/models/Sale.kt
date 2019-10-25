@@ -6,6 +6,6 @@ data class Sale(
     val price: Double,
     val discount: Int,
     val url: String,
-    val imageUri: String?,
+    val imageUrl: String?,
     val idShop: Int?
 )

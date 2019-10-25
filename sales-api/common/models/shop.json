@@ -21,8 +21,13 @@
       "required": true,
       "dataType": "float"
     },
-    "logoUri": {
-      "type": "string"
+    "created": {
+      "type": "date",
+      "default": "$now"
+    },
+    "modified": {
+      "type": "date",
+      "default": "$now"
     }
   },
   "validations": [],

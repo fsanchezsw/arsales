@@ -31,6 +31,7 @@ export class AddSaleComponent implements OnInit {
       price: [, Validators.required],
       discount: [, Validators.required],
       url: [, Validators.required],
+      imageUrl: [, Validators.required],
       idShop: [, Validators.required]
     });
   }
